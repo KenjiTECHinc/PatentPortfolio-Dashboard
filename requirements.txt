@@ -1,0 +1,12 @@
+#basic
+pandas
+numpy
+
+#visualization
+matplotlib
+plotly
+dash
+dash-bootstrap-components
+
+#deploy
+gunicorn
