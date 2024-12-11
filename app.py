@@ -12,6 +12,9 @@ from theme import theme
 
 app = Dash(__name__)
 
+#deployment
+server = app.server
+
 app.layout = html.Div(children=[
     html.Div(children=[
     html.H1('Patent Portfolio Analysis Dashboard',
@@ -172,4 +175,4 @@ style={'textAlign': 'center',
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run(debug=True)
