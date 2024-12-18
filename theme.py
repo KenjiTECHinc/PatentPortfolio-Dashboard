@@ -10,6 +10,9 @@ class theme:
     primary = '#599191'
     secondary = '#8dd8d3'
     white = '#ffffff'
+    grey = '#F0F0F0'
+    darkGrey = '#454544'
+    black = '#000000'
     
     highlight1 = '#0b6374'
     highlight2 = '#8dd8d3'

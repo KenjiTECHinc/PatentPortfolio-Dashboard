@@ -38,7 +38,7 @@ for i in range(len(list_df)):
             mode='lines', 
             name=f'{companies[i] if (companies[i] != companies[2]) else 'TSMC'}\'s Domestic Citations', 
             line=dict(color=theme.highlightAlert),
-            visible=(i == 0)
+            visible=False
             )
         )
     fig.add_trace(
@@ -48,11 +48,20 @@ for i in range(len(list_df)):
             mode='lines', 
             name=f'{companies[i] if (companies[i] != companies[2]) else 'TSMC'}\'s Foreign Citations', 
             line=dict(color=theme.highlight3),
-            visible=(i == 0)
+            visible=False
             )
         )
 
 buttons = []
+buttons.append(
+    dict(
+        label='None',
+        method="update",
+        args=[{"visible": [False] * len(companies) * 2},  # Show all traces
+              {"title": "Citations of All Companies"}]  # Update chart title
+    )
+)
+
 for i, company in enumerate(companies):
     visibility = []  # Make only one trace visible
     
@@ -72,7 +81,7 @@ for i, company in enumerate(companies):
 fig.update_layout(
     updatemenus=[
         dict(
-            type="buttons",
+            type="dropdown",
             showactive=True,
             buttons=buttons,
             #x=1.15,  # Position the buttons to the right of the chart

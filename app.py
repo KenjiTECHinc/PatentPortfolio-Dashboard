@@ -57,7 +57,20 @@ app.layout = html.Div(children=[
                        'font-size': theme.body,
                        'color': theme.highlight1,
                    }),
-            dcc.Graph(id='throughput-line-chart', figure = lc.fig),
+            dcc.Graph(id='throughput-line-chart'),
+            dcc.Slider(
+                id='year-slider',
+                min=2013,           # Minimum value
+                max=2024,         # Maximum value
+                step=1,          # Step size
+                value=2024,        # Default value
+                marks={          # Marks shown on the slider
+                    i : {'label': str(i)} for i in range(2013, 2025, 1)
+                },
+                tooltip={"placement": "bottom", 
+                         "style": {'width': '70%'},
+                         "always_visible": True},  # Show tooltip
+            ),
             html.Div(children=[
                 dcc.Graph(id='share-pie-chart', figure = pc.fig),
                 dcc.Graph(id='pie-chart', figure = pc2.fig),
@@ -146,7 +159,7 @@ app.layout = html.Div(children=[
                    'margin': '10px auto',
                    'color': theme.highlight1,
                    }),
-        html.H4('Domestic and Foreign Citations Analysis',
+        html.H4('Domestic and Foreign Citations Analysis & Comparisons',
                 style={
                     'font-family': theme.font1,
                     'font-size': theme.header,
@@ -159,10 +172,50 @@ app.layout = html.Div(children=[
                    'color': theme.highlight1,
                    'width': '40%',
                    }),
+        html.Div(children=[
+            html.Div(children=[
+            html.P('‼️Select companies to compare its citation trend and see the differences.‼️',
+                style={
+                    'font-family': theme.font1,
+                    'font-size': theme.body,
+                    'color': theme.darkGrey,
+                    }),
+            ],
+            style={
+                'background-color': theme.grey,
+                'border-radius': '10px',
+                'padding': '10px',
+                'width': '40%',
+                'text-align': 'center',
+            }),
+        ],
+        style={
+            'padding': '20px',
+            'width': '100%',
+            'text-align': 'center',
+            'display': 'flex',
+            'align-items': 'center',
+            'justify-content': 'space-around',
+        }),
         dcc.Graph(id='line-chart', figure = lc2.fig),
+        html.Div(children=[
+            html.P('Vs.',
+                style={
+                    'font-family': theme.font1,
+                    'font-size': theme.subtitle,
+                    'color': theme.highlight1,
+                    }),
+        ],
+        style={
+            'padding': '10px',
+            'width': '100%',
+            'text-align': 'center',
+        }),
+        dcc.Graph(id='line-chart-comparer', figure = lc2.fig),
     ],
         style={'padding': '10px',
-               'textAlign': 'left'}
+               'text-align': 'left',
+               }
     ),
     # html.Div(children=dcc.Graph(id='line-chart', figure = lc2.fig),
     #             style={'padding': '10px'}
@@ -173,6 +226,15 @@ style={'textAlign': 'center',
 
 )
 
+@app.callback(
+    Output('throughput-line-chart', 'figure'),
+    Input('year-slider', 'value')
+)
+def update_line_chart(slider_value):
+    # Pass the slider value to the function to generate the updated chart
+    return lc.generateChart(slider_value)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
+    #app.run_server(debug=True)
