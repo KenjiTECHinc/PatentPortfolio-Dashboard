@@ -30,6 +30,16 @@ app.layout = html.Div(children=[
                 'bold': 'False',
                 'color': theme.white,
             }),
+    html.A('Visit Our GitHub Repository', 
+           href='https://github.com/KenjiTECHinc/PatentPortfolio-Dashboard',
+           target='_blank',
+           style={
+                'font-family': theme.font1,
+                'font-size': theme.body,
+                'color': theme.white,
+                'text-decoration': 'underline',
+              },
+           ),
     ],
     style={
         'padding': '20px',
