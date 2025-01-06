@@ -58,10 +58,8 @@ In each section, some data visualizations are provided along with some interacta
 
 ![interactable-2](https://github.com/user-attachments/assets/d513c819-12d1-4b19-85dc-e353145fa676)
 
-## Contributing to the Project
+## Contributors
 
-To contribute to the project, simply fork the repository and submit a pull request!
-### Current Contributors
 - 曾裕興 ([KenjiTECHinc](https://github.com/KenjiTECHinc))
 - 彭湘淇 ([kikipeng2000](https://github.com/kikipeng2000))
 - 梅夫 (Mave K. Alexander)
