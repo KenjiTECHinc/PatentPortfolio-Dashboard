@@ -63,7 +63,7 @@ In each section, some data visualizations are provided along with some interacta
 To contribute to the project, simply fork the repository and submit a pull request!
 ### Current Contributors
 - 曾裕興 ([KenjiTECHinc](https://github.com/KenjiTECHinc))
-- 彭湘淇 (Kiki)
+- 彭湘淇 ([kikipeng2000](https://github.com/kikipeng2000))
 - 梅夫 (Mave K. Alexander)
 
 ---
