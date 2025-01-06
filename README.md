@@ -65,3 +65,9 @@ To contribute to the project, simply fork the repository and submit a pull reque
 - 曾裕興 ([KenjiTECHinc](https://github.com/KenjiTECHinc))
 - 彭湘淇 (Kiki)
 - 梅夫 (Mave K. Alexander)
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
