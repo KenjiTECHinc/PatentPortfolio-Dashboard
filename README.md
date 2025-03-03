@@ -4,8 +4,8 @@ The dashboard is made to display the portfolio of System on Chip (SoC) patents f
 
 ### Viewing Deployed Site
 
-> ANNOUNCEMENT:
-> Deployment discontinued, please deploy the repository locally to view.
+> [!NOTE]
+> Deployment is live, feel free to check it out. Or please deploy the repository locally to view.
 
 [Click here](https://dash-patent-portfolio-a69935845d06.herokuapp.com/) to view the deployed dashboard.
 
