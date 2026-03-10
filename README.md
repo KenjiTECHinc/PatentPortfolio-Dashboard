@@ -5,7 +5,7 @@ The dashboard is made to display the portfolio of System on Chip (SoC) patents f
 ### Viewing Deployed Site
 
 > [!NOTE]
-> Deployment is live, feel free to check it out. Or please deploy the repository locally to view.
+> Deployment is taken down (I don't have enough money to keep it live 😥). Please deploy the repository locally to view.
 
 [Click here](https://dash-patent-portfolio-a69935845d06.herokuapp.com/) to view the deployed dashboard.
 
@@ -19,14 +19,13 @@ In addition, [DB Browser](https://sqlitebrowser.org/) was used to test the SQL q
 
 ## Running the Code
 
-> Note: You may deploy the project to your local as normal.
-
 To run the code, you may open `app.py` and locate the following line:
 
 ```
 if __name__ == '__main__':
     app.run(debug=True)
 ```
+> This line of code is initially for deployment on Heroku.
 
 and change it to the following:
 
